@@ -23,6 +23,7 @@
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
     <!-- Tweaks for older IEs-->
+     
     <link
       rel="stylesheet"
       href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
@@ -37,41 +38,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
     ><![endif]-->
 
-    <style>
-      /* Container for search */
-      .search-container {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-      }
-
-      /* Search Bar (Hidden by Default) */
-      #search-bar {
-          width: 0;
-          opacity: 0;
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-          transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-      }
-
-      /* When active, expand smoothly */
-      #search-bar.active {
-          width: 200px;
-          opacity: 1;
-      }
-
-      /* Style the search button */
-      #search-btn {
-          background: none;
-          border: none;
-          font-size: 20px;
-          cursor: pointer;
-      }
-  </style>
-
-
+   
   </head>
   <!-- body -->
 
@@ -110,6 +77,8 @@
               
                       <!-- Search Bar -->
                       <input type="text" id="search-bar" placeholder="Search..." />
+
+                      <div id="search-results"></div>
                   </div>
                   </li>
                 </ul>
@@ -118,15 +87,7 @@
           </div>
         </div>
         <!-- end header inner -->
-        <script>
-          document.getElementById("search-btn").addEventListener("click", function() {
-              let searchBar = document.getElementById("search-bar");
-              searchBar.classList.toggle("active"); // Toggle class
-              if (searchBar.classList.contains("active")) {
-                  searchBar.focus(); // Auto-focus when opened
-              }
-          });
-      </script>
+        
         <!-- end header -->
         <section class="slider_section">
           <div class="banner_main">
@@ -665,5 +626,6 @@
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="/js/search.js"></script>
   </body>
 </html>
