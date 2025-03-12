@@ -48,6 +48,7 @@
      margin: 0;
      width: 100%;
      list-style-type: none;
+     height: fit-content;
 }
  .mean-container .mean-nav ul li {
      position: relative;
