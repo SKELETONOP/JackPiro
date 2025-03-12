@@ -1116,6 +1116,12 @@
  .our {
      background-color: #fff;
      padding-top: 90px;
+     
+}
+.col-md-12{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
  .our .titlepage {
      text-align: left;
@@ -1125,6 +1131,7 @@
 }
  .our .Games {
      text-align: left;
+     
 }
  .our .Games h3 {
      color: #000;
