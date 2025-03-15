@@ -29,10 +29,161 @@
 * Find more information at http://www.meanthemes.com/plugins/meanmenu/
 *
 */
+!function(n) {
+  "use strict";
+  n.fn.meanmenu = function(P) {
+      var e = {
+          meanMenuTarget: jQuery(this),
+          meanMenuContainer: ".menu-area",
+          meanMenuClose: "X",
+          meanMenuCloseSize: "25px",
+          meanMenuOpen: "<span /><span /><span />",
+          meanRevealPosition: "",
+          meanRevealPositionDistance: "0",
+          meanRevealColour: "",
+          meanScreenWidth: "767",
+          meanNavPush: "",
+          meanShowChildren: !0,
+          meanExpandableChildren: !0,
+          meanExpand: "+",
+          meanContract: "-",
+          meanRemoveAttrs: !1,
+          onePage: !1,
+          meanDisplay: "block",
+          removeElements: ""
+      };
+      P = n.extend(e, P);
+      var W = window.innerWidth || document.documentElement.clientWidth;
 
-!function(n){"use strict";n.fn.meanmenu=function(P){var e={meanMenuTarget:jQuery(this),meanMenuContainer:".menu-area",meanMenuClose:"X",meanMenuCloseSize:"25px",meanMenuOpen:"<span /><span /><span />",meanRevealPosition:"",meanRevealPositionDistance:"0",meanRevealColour:"",meanScreenWidth:"767",meanNavPush:"",meanShowChildren:!0,meanExpandableChildren:!0,meanExpand:"+",meanContract:"-",meanRemoveAttrs:!1,onePage:!1,meanDisplay:"block",removeElements:""};P=n.extend(e,P);var W=window.innerWidth||document.documentElement.clientWidth;return this.each(function(){var a=P.meanMenuTarget,t=P.meanMenuContainer,r=P.meanMenuClose,i=P.meanMenuCloseSize,u=P.meanMenuOpen,n=P.meanRevealPosition,e=P.meanRevealPositionDistance,m=P.meanRevealColour,s=P.meanScreenWidth,l=P.meanNavPush,o=".meanmenu-reveal",c=P.meanShowChildren,h=P.meanExpandableChildren,v=P.meanExpand,d=P.meanContract,y=P.meanRemoveAttrs,j=P.onePage,Q=P.meanDisplay,f=P.removeElements,g=!1;(navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/Blackberry/i)||navigator.userAgent.match(/Windows Phone/i))&&(g=!0),(navigator.userAgent.match(/MSIE 8/i)||navigator.userAgent.match(/MSIE 7/i))&&jQuery("html").css("overflow-y","scroll");function p(){var e;"center"===n&&(e=(window.innerWidth||document.documentElement.clientWidth)/2-22+"px",C="left:"+e+";right:auto;",g?jQuery(".meanmenu-reveal").animate({left:e}):jQuery(".meanmenu-reveal").css("left",e))}var C="",w=!1,x=!1;"right"===n&&(C="right:"+e+";left:auto;"),"left"===n&&(C="left:"+e+";right:auto;"),p();function A(){jQuery(".mean-bar,.mean-push").remove(),jQuery(t).removeClass("mean-container"),jQuery(a).css("display",Q),x=w=!1,jQuery(f).removeClass("mean-remove")}function E(){var e,n="background:"+m+";color:"+m+";"+C;W<=s?(jQuery(f).addClass("mean-remove"),x=!0,jQuery(t).addClass("mean-container"),jQuery(".mean-container").prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="'+n+'">Show Navigation</a><nav class="mean-nav"></nav></div>'),e=jQuery(a).html(),jQuery(".mean-nav").html(e),y&&jQuery("nav.mean-nav ul, nav.mean-nav ul *").each(function(){jQuery(this).is(".mean-remove")?jQuery(this).attr("class","mean-remove"):jQuery(this).removeAttr("class"),jQuery(this).removeAttr("id")}),jQuery(a).before('<div class="mean-push" />'),jQuery(".mean-push").css("margin-top",l),jQuery(a).hide(),jQuery(".meanmenu-reveal").show(),jQuery(o).html(u),M=jQuery(o),jQuery(".mean-nav ul").hide(),c?h?(jQuery(".mean-nav ul ul").each(function(){jQuery(this).children().length&&jQuery(this,"li:first").parent().append('<a class="mean-expand" href="#" style="font-size: '+i+'">'+v+"</a>")}),jQuery(".mean-expand").on("click",function(e){e.preventDefault(),jQuery(this).hasClass("mean-clicked")?(jQuery(this).text(v),jQuery(this).prev("ul").slideUp(300,function(){})):(jQuery(this).text(d),jQuery(this).prev("ul").slideDown(300,function(){})),jQuery(this).toggleClass("mean-clicked")})):jQuery(".mean-nav ul ul").show():jQuery(".mean-nav ul ul").hide(),jQuery(".mean-nav ul li").last().addClass("mean-last"),M.removeClass("meanclose"),jQuery(M).click(function(e){e.preventDefault(),w=!1===w?(M.css("text-align","center"),M.css("text-indent","0"),M.css("font-size",i),jQuery(".mean-nav ul:first").slideDown(),!0):(jQuery(".mean-nav ul:first").slideUp(),!1),M.toggleClass("meanclose"),jQuery(M).is(".meanmenu-reveal.meanclose")?M.html(r):M.html(u),jQuery(f).addClass("mean-remove")}),j&&jQuery(".mean-nav ul > li > a:first-child").on("click",function(){jQuery(".mean-nav ul:first").slideUp(),w=!1,jQuery(M).toggleClass("meanclose").html(u)})):A()}var M="";g||jQuery(window).resize(function(){W=window.innerWidth||document.documentElement.clientWidth,A(),W<=s?(E(),p()):A()}),jQuery(window).resize(function(){W=window.innerWidth||document.documentElement.clientWidth,g?(p(),W<=s?!1===x&&E():A()):(A(),W<=s&&(E(),p()))}),E()})}}(jQuery);
+      return this.each(function() {
+          var a = P.meanMenuTarget,
+              t = P.meanMenuContainer,
+              r = P.meanMenuClose,
+              i = P.meanMenuCloseSize,
+              u = P.meanMenuOpen,
+              n = P.meanRevealPosition,
+              e = P.meanRevealPositionDistance,
+              m = P.meanRevealColour,
+              s = P.meanScreenWidth,
+              l = P.meanNavPush,
+              o = ".meanmenu-reveal",
+              c = P.meanShowChildren,
+              h = P.meanExpandableChildren,
+              v = P.meanExpand,
+              d = P.meanContract,
+              y = P.meanRemoveAttrs,
+              j = P.onePage,
+              Q = P.meanDisplay,
+              f = P.removeElements,
+              g = !1;
+
+          (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || 
+           navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i) || 
+           navigator.userAgent.match(/Blackberry/i) || navigator.userAgent.match(/Windows Phone/i)) && (g = !0);
+
+          function A() {
+              jQuery(".mean-bar,.mean-push, #mean-search-results").remove();
+              jQuery(t).removeClass("mean-container");
+              jQuery(a).css("display", Q);
+              jQuery(f).removeClass("mean-remove");
+          }
+
+          function E() {
+              if (W <= s) {
+                  if (jQuery(".mean-bar").length) return; // Prevent duplicates
+
+                  jQuery(f).addClass("mean-remove");
+                  jQuery(t).addClass("mean-container");
+
+                  jQuery(".mean-container").prepend(`
+                    <div class="mean-bar">
+                        <button id="mean-search-btn" class="search-icon">
+                            <img src="/images/search_icon.png" alt="Search" width="20" height="20">
+                        </button>
+                        <input type="text" id="mean-search-bar" class="mean-search" placeholder="Search...">
+                        <div id="mean-search-results" class="search-results"></div> <!-- SEARCH RESULTS ADDED -->
+                        <a href="#nav" class="meanmenu-reveal" style="${n}">${u}</a>
+                        <nav class="mean-nav"></nav>
+                    </div>
+                `);
+
+                  var menuHTML = jQuery(a).html();
+                  jQuery(".mean-nav").html(menuHTML);
+                  jQuery(a).before('<div class="mean-push" />');
+                  jQuery(".mean-push").css("margin-top", l);
+                  jQuery(a).hide();
+                  jQuery(".meanmenu-reveal").show();
+
+                  jQuery(".mean-nav ul").hide();
+                  jQuery(".meanmenu-reveal").click(function(e) {
+                      e.preventDefault();
+                      jQuery(".mean-nav ul:first").slideToggle();
+                      jQuery(this).toggleClass("meanclose");
+                      jQuery(this).html(jQuery(this).hasClass("meanclose") ? r : u);
+                  });
+
+                  // 🔹 SEARCH FUNCTIONALITY
+                  jQuery("#mean-search-bar").on("keyup", function() {
+                      var query = jQuery(this).val().toLowerCase();
+                      var searchResults = jQuery("#mean-search-results");
+                      searchResults.empty(); // Clear previous results
+
+                      if (query.length === 0) {
+                          searchResults.hide();
+                          return;
+                      }
+
+                      jQuery(".mean-nav ul li").each(function() {
+                          var text = jQuery(this).text().toLowerCase();
+                          if (text.includes(query)) {
+                              var resultItem = jQuery(`<div class="search-result-item">${jQuery(this).text()}</div>`);
+                              
+                              resultItem.on("click", function() {
+                                  jQuery("#mean-search-bar").val(jQuery(this).text()); // Autofill search bar
+                                  searchResults.hide();
+                                  jQuery(this).parent().scrollIntoView({ behavior: "smooth", block: "center" });
+                              });
+
+                              searchResults.append(resultItem);
+                          }
+                      });
+
+                      if (searchResults.children().length > 0) {
+                          searchResults.show();
+                      } else {
+                          searchResults.hide();
+                      }
+                  });
+
+                  // 🔹 Hide results when clicking outside
+                  jQuery(document).on("click", function(event) {
+                      if (!jQuery(".mean-bar").is(event.target) && jQuery(".mean-bar").has(event.target).length === 0) {
+                          jQuery("#mean-search-results").hide();
+                      }
+                  });
+
+              } else {
+                  A();
+              }
+          }
+
+          jQuery(window).resize(function() {
+              W = window.innerWidth || document.documentElement.clientWidth;
+              A();
+              W <= s ? E() : A();
+          });
+
+          E();
+      });
+  };
+}(jQuery);
 
 
+
+// new code here
+
+
+// ends here 
 /**
  * MapIt
  *
